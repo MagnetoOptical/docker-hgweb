@@ -1,0 +1,63 @@
+= docker-hgweb
+Docker build for hosting mercurial repositories
+
+== Legal
+Copyright 2022 Sean Seago
+Unless otherwise stated in an approriate "LICENSE.txt" all source code in MagnetoOptical's repos are licensed under the GNU Affero General Public License Version 3 (AGPLv3), and all documentation is licensed under the GNU Free Documentation License (GFDL).
+
+This repo is an exception, it licensed under the Apache License, Version 2.0.  This work could be construed as a deriviativer of one of the cited repositories, so it would be expected that this work, too, would be licensed via BSD 2-clause.  However, there are two points work making:
+
+1. The Apache License, Version 2.0 subsumes (assumes compliance by) the BSD 2-clause license.  Thus there is no harm in relicensing under Apache License, Version 2.0
+
+2. The Apache License, Version 2.0, refered to by the Free Software Foundation as the Apache Software License, Version 2.0, is broadly compatible with the GNU General Public License version 3 (GPLv3).  This helps me to better align this project with other projects published vian the MagnetoOptical account which tend to be licensed via the GNU Affero General Public License version 3 (AGPLv3).
+
+== Objective
+
+The objective of this repo is to provide an hgweb WSGI Docker container which will function in tandem with the following additional images as work toward a truly distributed workflow:
+
+- Minio (dev branch, general storage)
+- IPFS (releases)
+- Ethereum Naming Service (human-friendly resource naming)
+- Kanboard (Kanban board)
+- Roudup (Issue tracking)
+- Buildbot (Build, testing, publication)
+
+== Installing
+
+The image may be built locally by cloning the repo, changing into the repository directory and running
+[source,bash]
+----
+docker build -t hgweb .
+----
+
+## Using
+
+The locally built image can be utilized (minimally) by running:
+[source,bash]
+----
+docker run -it --rm -v /path/to/hg/repo/:/var/hg/repos -p 8080:80 hgweb
+----
+
+Alternatively, the latest build can be fetched from Docker Hub via:
+[source,bash]
+----
+docker run -it --rm -v /path/to/hg/repo/:/var/hg/repos -p 8080:80 magnetooptical/docker-hgweb:latest
+----
+
+## Support
+
+Issues can be raised via github issues.  I'll provide best effort.  Pull requests welcome.
+
+## Citations
+Much of this work was inspired by the work in the following repositories:
+https://github.com/Anteru/hgweb-docker
+
+Articles:
+Configuring hgweb by Mozilla [https://hg.mozilla.org/mozilla-central/help/hgweb]
+Allow HTTP Push With Mercurial Server by David Walsh [https://davidwalsh.name/http-push-mercurial-server]
+
+## Future Work
+
+1. Move from Apache to Lighttpd to decrease resource utilization and provide a zippier experience
+2. Incorporate certificates from Let's Encrypt
+3. Auto-renew certificates
