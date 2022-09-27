@@ -51,11 +51,16 @@ Issues can be raised via github issues.  I'll provide best effort.  Pull request
 
 ## Citations
 Much of this work was inspired by the work in the following repositories:
-https://github.com/Anteru/hgweb-docker
+
+- https://github.com/Anteru/hgweb-docker
+- https://github.com/amclain/docker-hgweb
+- https://github.com/mozilla-iam/federated-mercurial
+
 
 Articles:
-Configuring hgweb by Mozilla [https://hg.mozilla.org/mozilla-central/help/hgweb]
-Allow HTTP Push With Mercurial Server by David Walsh [https://davidwalsh.name/http-push-mercurial-server]
+
+- Configuring hgweb by Mozilla [https://hg.mozilla.org/mozilla-central/help/hgweb]
+- Allow HTTP Push With Mercurial Server by David Walsh [https://davidwalsh.name/http-push-mercurial-server]
 
 ## Future Work
 
