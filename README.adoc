@@ -3,17 +3,18 @@ Docker build for hosting mercurial repositories
 
 == Legal
 Copyright 2022 Sean Seago
+
 Unless otherwise stated in an approriate "LICENSE.txt" all source code in MagnetoOptical's repos are licensed under the GNU Affero General Public License Version 3 (AGPLv3), and all documentation is licensed under the GNU Free Documentation License (GFDL).
 
-This repo is an exception, it licensed under the Apache License, Version 2.0.  This work could be construed as a deriviativer of one of the cited repositories, so it would be expected that this work, too, would be licensed via BSD 2-clause.  However, there are two points work making:
+This repo is an exception as it is licensed under the Apache License, Version 2.0.  For some this work might be construed as a deriviative of one of the cited repositories, so it would be expected that this work, too, would be licensed via BSD 2-clause.  However, there are two points worth making:
 
 1. The Apache License, Version 2.0 subsumes (assumes compliance by) the BSD 2-clause license.  Thus there is no harm in relicensing under Apache License, Version 2.0
 
-2. The Apache License, Version 2.0, refered to by the Free Software Foundation as the Apache Software License, Version 2.0, is broadly compatible with the GNU General Public License version 3 (GPLv3).  This helps me to better align this project with other projects published vian the MagnetoOptical account which tend to be licensed via the GNU Affero General Public License version 3 (AGPLv3).
+2. The Apache License, Version 2.0, refered to by the Free Software Foundation as the Apache Software License, Version 2.0, is broadly compatible with the GNU General Public License version 3 (GPLv3).  This helps me to better align this project with other projects published via the MagnetoOptical account which tend to be licensed via the GNU Affero General Public License version 3 (AGPLv3).
 
 == Objective
 
-The objective of this repo is to provide an hgweb WSGI Docker container which will function in tandem with the following additional images as work toward a truly distributed workflow:
+The objective of this repo is to provide an hgweb WSGI Docker image which functions in tandem with the following additional images as work toward a truly distributed workflow:
 
 - Minio (dev branch, general storage)
 - IPFS (releases)
@@ -24,7 +25,7 @@ The objective of this repo is to provide an hgweb WSGI Docker container which wi
 
 == Installing
 
-The image may be built locally by cloning the repo, changing into the repository directory and running
+The image may be built locally by cloning the repo, changing into the repository directory and running:
 [source,bash]
 ----
 docker build -t hgweb .
